@@ -1,12 +1,9 @@
 from . import scrape , models
-from celery.decorators import task , periodic_task
-from celery.task.schedules import crontab
-from webdocs.celery import app
-
+from celery import shared_task
 
 
 def queue_maker():
-        for client in models.clients.objects.all():
+        for client in models.Client.objects.all():
                 #news queue
                 old_queue = client.queue
                 new_queue = models.queue()
@@ -43,29 +40,29 @@ def save_events():
 def save_news():
         news = []
         scraped = scrape.scrape_news()
-        models.news.objects.all().delete()
+        #models.Content_Main_News.objects.all().delete()
         for a_news in scraped:
-                if(a_news.image_url != ''):
-                        new_news = models.news()
-                        new_news.title = a_news.title
-                        new_news.date = a_news.date
-                        new_news.image_url = a_news.image_url
-                        new_news.save()
-                        print('news')
-                        news_dict = {'title':a_news.title , 'date':a_news.date , 'image_url':a_news.image_url}
-                        news.append(news_dict)
+                if(models.Content_Main_News.objects.filter(title = a_news.title).count() <= 0):
+                        if(a_news.image_url != ''):
+                                new_news = models.Content_Main_News()
+                                new_news.title = a_news.title
+                                #new_news.date = a_news.date
+                                new_news.image = a_news.image_url
+                                new_news.save()
+                                print('news')
+                                news_dict = {'title':a_news.title , 'date':a_news.date , 'image_url':a_news.image_url}
+                                news.append(news_dict)
                         
         
         
 
 
 
-
-@periodic_task(run_every = crontab())
+@shared_task
 def save_in_db():
     save_news() 
-    save_events()
-    queue_maker()
+    #save_events()
+    #queue_maker()
     #return news
 
 
