@@ -17,8 +17,6 @@ def queue_maker():
                 print('queue')
 
 
-
-
 def save_events():
         scraped_events = scrape.scrape_events()
         models.events.objects.all().delete()
@@ -42,7 +40,7 @@ def save_news():
         scraped = scrape.scrape_news()
         #models.Content_Main_News.objects.all().delete()
         for a_news in scraped:
-                if(models.Content_Main_News.objects.filter(title = a_news.title).count() <= 0):
+                if(not models.Content_Main_News.objects.filter(title = a_news.title).exists()):
                         if(a_news.image_url != ''):
                                 new_news = models.Content_Main_News()
                                 new_news.title = a_news.title
