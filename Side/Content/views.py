@@ -29,16 +29,20 @@ def testshow(request):
 
 def json_resp_Main_News(request):
     if(request.method == 'GET'):
-        to_send = {'Success':False ,'reach_end':False, 'News':[]}
+        to_send = {'Success':False ,'reach_end':False,'max_count':0 ,'News':[]}
         if models.Client.objects.filter(token = request.GET.get('token')).exists():
             #client = models.clients.objects.get(token = request.GET.get('token'))
             start_from = int(request.GET.get('start_from'))
             count = int(request.GET.get('count'))
             max_count = models.Content_Main_News.objects.all().count()
+            to_send['max_count'] = max_count
             if(count > max_count):
                 count = max_count
-            if(start_from > max_count):
-                start_from = 0
+
+            if(start_from > max_count - 1):
+                start_from =  start_from % (max_count - 1) 
+                to_send['reach_end'] = True
+
             if(start_from + count >= max_count):
                 to_send['reach_end'] = True
 
