@@ -53,16 +53,7 @@ def scrape_events():
         
     return to_return
         
-
-
-
-
-
-
-
-
-
-
+        
 class news_class:
     title = ''
     date = ''
