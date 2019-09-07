@@ -1,4 +1,1 @@
 celery worker -A Side -P gevent --loglevel=INFO
-
-
-test
