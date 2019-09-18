@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="fontiran.com:license" content="Y68A9">
+    <link rel="icon" href="../build/images/favicon.ico" type="image/ico" />
+    <title>پنل مدیریت | سامانه ققنوس</title>
+
+    <!-- Bootstrap 3 -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/bootstrap-rtl/dist/css/bootstrap-rtl.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.css" rel="stylesheet">
+    <link href="../build/css/style.css" rel="stylesheet">
+</head>
+<!-- /header content -->
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col hidden-print">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>سامانه ققنوس</span></a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="../build/images/img.jpg" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>خوش آمدید</span>
+                            <h2>محسن البوغبیش</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+
+                    <br />
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>عمومی</h3>
+                            <ul class="nav side-menu">
+                                <li><a href="index2.html"><i class="fa fa-home"></i>خانه</a>
+                                </li>
+                                <li><a><i class="fa fa-edit"></i> پست <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="newpost.html">پست جدید</a></li>
+                                        <li><a href="newpost-edite.html">ویرایش</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-folder"></i> گزارش <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="#">درحال پخش</a></li>
+                                        <li><a href="#">گزارش کل</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fa fa-users"></i> مدیریت کاربران </a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-desktop"></i>انتخاب قالب</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-address-card"></i> پروفایل </a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-cog"></i> تنظیمات </a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-question-circle"></i> راهنما </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu_section">
+                            <h3>به صورت زنده</h3>
+                            <ul class="nav side-menu">
+                                <li><a href="#"><i class="fa fa-laptop"></i> در حال نمایش <span class="label label-success pull-left">به زودی</span></a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- /sidebar menu -->
+
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="تنظیمات">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="تمام صفحه" onclick="toggleFullScreen();">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="قفل" class="lock_btn">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="خروج" href="login.html">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+
+            <!-- top navigation -->
+            <div class="top_nav hidden-print">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="../build/images/img.jpg" alt="">محسن البوغبیش
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="#">پروفایل</a></li>
+                                    <li><a href="#">تنظیمات</span></a>
+                                    </li>
+                                    <li><a href="#">راهنما</a></li>
+                                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i>خروج</a></li>
+                                </ul>
+                            </li>
+
+                            <li role="presentation" class="dropdown">
+                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="badge bg-green">6</span>
+                                </a>
+                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src="../build/images/img.jpg"
+                                                    alt="Profile Image" /></span>
+                                            <span>
+                                                <span>مرتضی کریمی</span>
+                                            <span class="time">3 دقیقه پیش</span>
+                                            </span>
+                                            <span class="message">
+                                                فیلمای فستیوال فیلمایی که اجرا شده یا راجع به لحظات مرده ایه که فیلمسازا
+                                                میسازن. آنها جایی بودند که....
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src="../build/images/img.jpg"
+                                                    alt="Profile Image" /></span>
+                                            <span>
+                                                <span>مرتضی کریمی</span>
+                                            <span class="time">3 دقیقه پیش</span>
+                                            </span>
+                                            <span class="message">
+                                                فیلمای فستیوال فیلمایی که اجرا شده یا راجع به لحظات مرده ایه که فیلمسازا
+                                                میسازن. آنها جایی بودند که....
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src="../build/images/img.jpg"
+                                                    alt="Profile Image" /></span>
+                                            <span>
+                                                <span>مرتضی کریمی</span>
+                                            <span class="time">3 دقیقه پیش</span>
+                                            </span>
+                                            <span class="message">
+                                                فیلمای فستیوال فیلمایی که اجرا شده یا راجع به لحظات مرده ایه که فیلمسازا
+                                                میسازن. آنها جایی بودند که....
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src="../build/images/img.jpg"
+                                                    alt="Profile Image" /></span>
+                                            <span>
+                                                <span>مرتضی کریمی</span>
+                                            <span class="time">3 دقیقه پیش</span>
+                                            </span>
+                                            <span class="message">
+                                                فیلمای فستیوال فیلمایی که اجرا شده یا راجع به لحظات مرده ایه که فیلمسازا
+                                                میسازن. آنها جایی بودند که....
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="text-center">
+                                            <a>
+                                                <strong>مشاهده تمام اعلان ها</strong>
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- /header content -->
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+
+
+                    <!-- Top Tv -->
+
+                    <div class="row top_tiles">
+                        <h3 style="padding:5px">تلویزیون های من</h3>
+                        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="tile-stats">
+                                <div><i class="fa fa-tv" id="card-tv-icon"></i></div>
+                                <div id="card-tv2">اداری ریاست</div>
+                                <div id="card-tv3">وضعیت : <span style="color:green">فعال</span></div>
+                                <a href="#" type="button" class="btn btn-success" id="card-tv-btn">اطلاعات بیشتر<i class="fa fa-spin fa-circle-o-notch" id="btn-icon"></i></a>
+                            </div>
+                        </div>
+                        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="tile-stats">
+                                <div><i class="fa fa-tv" id="card-tv-icon"></i></div>
+                                <div id="card-tv2">اداری همکف</div>
+                                <div id="card-tv3">وضعیت : <span style="color:red">غیرفعال</span></div>
+                                <a href="#" type="button" class="btn btn-danger" id="card-tv-btn">اطلاعات بیشتر<i class="fa fa-circle-o-notch" id="btn-icon"></i></a>
+                            </div>
+                        </div>
+                        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="tile-stats">
+                                <div><i class="fa fa-tv" id="card-tv-icon"></i></div>
+                                <div id="card-tv2">دانشکده بهشتی</div>
+                                <div id="card-tv3">وضعیت : <span style="color:green">فعال</span></div>
+                                <a href="#" type="button" class="btn btn-success" id="card-tv-btn">اطلاعات بیشتر<i class="fa fa-spin fa-circle-o-notch" id="btn-icon"></i></a>
+                            </div>
+                        </div>
+                        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="tile-stats">
+                                <div><i class="fa fa-tv" id="card-tv-icon"></i></div>
+                                <div id="card-tv2">دانشکده فنی</div>
+                                <div id="card-tv3">وضعیت : <span style="color:green">فعال</span></div>
+                                <a href="#" type="button" class="btn btn-success" id="card-tv-btn">اطلاعات بیشتر<i class="fa fa-spin fa-circle-o-notch" id="btn-icon"></i></a>
+                            </div>
+                        </div>
+                        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="tile-stats">
+                                <div><i class="fa fa-tv" id="card-tv-icon"></i></div>
+                                <div id="card-tv2">سلف اساتید</div>
+                                <div id="card-tv3">وضعیت : <span style="color:red">غیرفعال</span></div>
+                                <a href="#" type="button" class="btn btn-danger" id="card-tv-btn">اطلاعات بیشتر<i class="fa fa-circle-o-notch" id="btn-icon"></i></a>
+                            </div>
+                        </div>
+                        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="tile-stats">
+                                <div><i class="fa fa-tv" id="card-tv-icon"></i></div>
+                                <div id="card-tv2">سلف دانشجویان</div>
+                                <div id="card-tv3">وضعیت : <span style="color:green">فعال</span></div>
+                                <a href="#" type="button" class="btn btn-success" id="card-tv-btn">اطلاعات بیشتر<i class="fa fa-spin fa-circle-o-notch" id="btn-icon"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Tv -->
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>خلاصه معامله
+                                        <small>پیشرفت هفتگی</small>
+                                    </h2>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <div class="col-md-9 col-sm-12 col-xs-12">
+                                        <div class="demo-container" style="height:280px">
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>بهترین نمایه ها
+                                        <small>جلسات</small>
+                                    </h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">تنظیمات 1</a>
+                                                </li>
+                                                <li><a href="#">تنظیمات 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد یک</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد دو</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد سه</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد چهار</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد پنج</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>بهترین نمایه ها
+                                        <small>جلسات</small>
+                                    </h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">تنظیمات 1</a>
+                                                </li>
+                                                <li><a href="#">تنظیمات 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد یک</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد دو</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد سه</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد چهار</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد پنج</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>بهترین نمایه ها
+                                        <small>جلسات</small>
+                                    </h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">تنظیمات 1</a>
+                                                </li>
+                                                <li><a href="#">تنظیمات 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد یک</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد دو</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد سه</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد چهار</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">آپریل</p>
+                                            <p class="day">23</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">عنوان مورد پنج</a>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت.</p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+
+
+            <!-- footer content -->
+            <footer class="hidden-print">
+                <div class="pull-center">
+                    <strong>CopyRight &copy; 2020 <a href="#">Good Boy</a> & <a href="#">Bad Boy</a></strong>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+    <div id="lock_screen">
+        <table>
+            <tr>
+                <td>
+                    <div class="clock"></div>
+                    <span class="unlock">
+                        <span class="fa-stack fa-5x">
+                            <i class="fa fa-square-o fa-stack-2x fa-inverse"></i>
+                            <i id="icon_lock" class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.js"></script>
+
+</body>
+
+</html>
