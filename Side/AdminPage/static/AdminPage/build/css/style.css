@@ -1,0 +1,91 @@
+#card-tv-icon {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    font-size: 80px;
+    float: left;
+    color: darkgray;
+}
+
+#card-tv2 {
+    font-size: 20px;
+    padding: 10px;
+    padding-bottom: 5px;
+    font-weight: 500;
+    color: rgb(139, 139, 139);
+}
+
+#card-tv3 {
+    font-size: 15px;
+    padding-top: 8px;
+    padding-right: 10px;
+    font-weight: 500;
+    color: rgb(151, 151, 151);
+}
+
+#card-tv-btn {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 5px;
+}
+
+#btn-icon {
+    margin-right: 10px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+#titr-np {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#ts {
+    font-family: sans-serif;
+    color: gray;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.checkbox {
+    text-align: center;
+    margin: 10px !important;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+#ghaleb {
+    margin: 0px;
+    border: 5px solid white;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.pull-center {
+    text-align: center !important;
+}
